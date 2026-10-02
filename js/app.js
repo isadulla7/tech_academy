@@ -45,30 +45,130 @@ const setProgress = (id, status) => {
   renderModules();
 };
 
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  if (document.documentElement) document.documentElement.scrollTop = 0;
+  if (document.body) document.body.scrollTop = 0;
+  const v = document.getElementById('view');
+  if (v) v.scrollTop = 0;
+  const m = document.querySelector('.main');
+  if (m) m.scrollTop = 0;
+};
+
+const expandedModules = new Set(['FND']);
+
 function renderModules() {
   const host = $('#modules');
   if (!host) return;
+
+  const curHash = location.hash || '';
+  let activeLessonId = '';
+  let activeModuleId = '';
+
+  if (curHash.startsWith('#/lesson/')) {
+    activeLessonId = curHash.slice('#/lesson/'.length);
+    const activeL = byId(activeLessonId);
+    if (activeL) {
+      activeModuleId = activeL.module;
+      expandedModules.add(activeL.module);
+    }
+  } else if (curHash.startsWith('#/module/')) {
+    activeModuleId = curHash.slice('#/module/'.length);
+    expandedModules.add(activeModuleId);
+  }
+
   host.innerHTML = M.map(m => {
-    const isCurrent = location.hash.includes('/module/' + m.id);
-    return `<button class="mod-btn ${isCurrent ? 'on' : ''}" data-route="/module/${m.id}">
-      <span class="mod-row">
-        <span>${esc(m.name)}</span>
-        <span class="mod-pct">${pct(m.id)}%</span>
-      </span>
-    </button>`;
+    const isExpanded = expandedModules.has(m.id);
+    const isCurrentModule = activeModuleId === m.id;
+    const modLessons = L.filter(x => x.module === m.id);
+
+    return `<div class="mod-group ${isExpanded ? 'open' : ''}" data-mod="${m.id}">
+      <div class="mod-header ${isCurrentModule ? 'on' : ''}">
+        <button type="button" class="mod-title-btn" data-mod-route="/module/${m.id}">
+          <span class="mod-title">${esc(m.name)}</span>
+        </button>
+        <div class="mod-header-meta">
+          <span class="mod-pct">${pct(m.id)}%</span>
+          <button type="button" class="mod-toggle-btn" data-toggle="${m.id}" title="${isExpanded ? 'Yopish' : 'Ochish'}">
+            ${isExpanded ? '▼' : '▶'}
+          </button>
+        </div>
+      </div>
+      ${isExpanded ? `
+        <div class="mod-lessons">
+          ${modLessons.map(l => {
+            const isCur = l.id === activeLessonId;
+            const st = state.progress[l.id]?.status || 'unread';
+            const stIcon = {
+              unread: '○',
+              weak: '?',
+              understood: '✓',
+              ready: '★'
+            }[st];
+            return `<a class="sidebar-lesson ${isCur ? 'active' : ''}" data-lesson-route="/lesson/${l.id}">
+              <span class="sidebar-lesson-icon status-${st}">${stIcon}</span>
+              <span class="sidebar-lesson-title" title="${esc(l.title)}">
+                <b class="sidebar-lesson-id">${l.id}:</b> ${esc(l.shortTitle || l.title)}
+              </span>
+            </a>`;
+          }).join('')}
+        </div>
+      ` : ''}
+    </div>`;
   }).join('');
 
-  host.querySelectorAll('[data-route]').forEach(b => {
-    b.addEventListener('click', () => go(b.dataset.route));
+  host.querySelectorAll('[data-mod-route]').forEach(b => {
+    b.addEventListener('click', (e) => {
+      e.stopPropagation();
+      go(b.dataset.modRoute);
+    });
+  });
+
+  host.querySelectorAll('[data-lesson-route]').forEach(b => {
+    b.addEventListener('click', (e) => {
+      e.stopPropagation();
+      go(b.dataset.lessonRoute);
+    });
+  });
+
+  host.querySelectorAll('[data-toggle]').forEach(b => {
+    b.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const mid = b.dataset.toggle;
+      if (expandedModules.has(mid)) {
+        expandedModules.delete(mid);
+      } else {
+        expandedModules.add(mid);
+      }
+      renderModules();
+    });
   });
 
   document.querySelectorAll('.shortcut-btn').forEach(b => {
     const r = b.dataset.route;
     b.classList.toggle('on', (location.hash === '#' + r) || (!location.hash && r === '/'));
   });
+
+  const toggleAllBtn = $('#toggleAllBtn');
+  if (toggleAllBtn) {
+    const allOpen = M.every(m => expandedModules.has(m.id));
+    toggleAllBtn.textContent = allOpen ? 'Barchasini yopish' : 'Barchasini ochish';
+    toggleAllBtn.onclick = () => {
+      if (allOpen) {
+        expandedModules.clear();
+        if (activeModuleId) expandedModules.add(activeModuleId);
+      } else {
+        M.forEach(m => expandedModules.add(m.id));
+      }
+      renderModules();
+    };
+  }
 }
 
-const go = r => { location.hash = '#' + r; };
+const go = r => {
+  location.hash = '#' + r;
+  scrollToTop();
+};
 
 function card(x) {
   const st = state.progress[x.id]?.status || 'unread';
@@ -166,6 +266,7 @@ function dashboard() {
 }
 
 function lessonView(id) {
+  scrollToTop();
   const x = byId(id);
   if (!x) {
     view.innerHTML = '<div class="card"><p class="muted">Dars topilmadi.</p></div>';
@@ -232,7 +333,7 @@ function lessonView(id) {
           ★ Tushuntira olaman (100%)
         </button>
         <button class="btn-deep" type="button" id="deepBtn">
-          🔬 Chuqurroq (Under the Hood)
+          🔬 Under the Hood (Pastga sakrash ↓)
         </button>
       </div>
 
@@ -327,22 +428,17 @@ function lessonView(id) {
   const topNext = $('#topNextBtn');
   if (topNext && nextLesson) topNext.addEventListener('click', () => go('/lesson/' + nextLesson.id));
 
-  // "Chuqurroq" toggle inline function (MUST NOT create prompt, opens deep content directly!)
+  // Under the Hood navigation: section is visible by default at page bottom, button scrolls down
   const deepBtn = $('#deepBtn');
   const deepSec = $('#deepSection');
+  if (deepSec) {
+    deepSec.removeAttribute('hidden');
+  }
   if (deepBtn && deepSec) {
     deepBtn.addEventListener('click', () => {
-      const isHidden = deepSec.hasAttribute('hidden');
-      if (isHidden) {
-        deepSec.removeAttribute('hidden');
-        deepBtn.textContent = '▲ Chuqur qismni yopish';
-        deepBtn.classList.add('active');
-        deepSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        deepSec.setAttribute('hidden', '');
-        deepBtn.textContent = '🔬 Chuqurroq (Under the Hood)';
-        deepBtn.classList.remove('active');
-      }
+      deepSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      deepSec.classList.add('highlight-pulse');
+      setTimeout(() => deepSec.classList.remove('highlight-pulse'), 1500);
     });
   }
 
@@ -684,6 +780,7 @@ $('#navReview').addEventListener('click', () => go('/review'));
 $('#menuBtn').addEventListener('click', () => $('.sidebar').classList.toggle('open'));
 
 function route() {
+  scrollToTop();
   renderModules();
   $('.sidebar').classList.remove('open');
   const p = (location.hash || '#/').slice(1).split('/').filter(Boolean);

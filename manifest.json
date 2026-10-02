@@ -1,0 +1,93 @@
+{
+  "name": "Tech Academy",
+  "version": "1.0.0",
+  "lessonCount": 83,
+  "modules": [
+    {
+      "id": "FND",
+      "name": "Fundamentals",
+      "order": 0
+    },
+    {
+      "id": "REAL",
+      "name": "Real savollar",
+      "order": 0
+    },
+    {
+      "id": "OOP",
+      "name": "OOP",
+      "order": 1
+    },
+    {
+      "id": "KT",
+      "name": "Kotlin",
+      "order": 2
+    },
+    {
+      "id": "COR",
+      "name": "Coroutines",
+      "order": 4
+    },
+    {
+      "id": "FL",
+      "name": "Flow",
+      "order": 5
+    },
+    {
+      "id": "AN",
+      "name": "Android Fundamentals",
+      "order": 6
+    },
+    {
+      "id": "CP",
+      "name": "Jetpack Compose",
+      "order": 7
+    },
+    {
+      "id": "AR",
+      "name": "Architecture & DI",
+      "order": 9
+    },
+    {
+      "id": "SEC",
+      "name": "Network, Security & Fintech",
+      "order": 10
+    },
+    {
+      "id": "JV",
+      "name": "Java Core & JVM",
+      "order": 11
+    },
+    {
+      "id": "JCON",
+      "name": "Java Concurrency",
+      "order": 12
+    },
+    {
+      "id": "SQL",
+      "name": "SQL & Oracle",
+      "order": 13
+    },
+    {
+      "id": "TX",
+      "name": "Transactions & PL/SQL",
+      "order": 14
+    },
+    {
+      "id": "SP",
+      "name": "Spring Boot",
+      "order": 15
+    },
+    {
+      "id": "FB",
+      "name": "Fintech Backend",
+      "order": 16
+    },
+    {
+      "id": "HR",
+      "name": "HR & Suhbat",
+      "order": 17
+    }
+  ],
+  "sourceOfTruth": "data/lessons.js"
+}

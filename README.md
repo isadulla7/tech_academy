@@ -12,15 +12,17 @@
 Har bir dars quyidagi qat'iy tizim asosida yoritilgan:
 1. **💡 Amaliyotdagi holat** — Real bank va ishlab chiqarishdagi keyslar.
 2. **1. Muammo nima?** — Mexanizm paydo bo'lishidan oldingi tizim/apparat muammosi.
-3. **2. Eng sodda mental model** — Kundalik hayotiy analogiya (ish stoli, omborxona, kuryer va h.k.).
+3. **2. Dasturchi uchun mental model** — Muhandislik darajasidagi aniq va tushunarli model.
 4. **3. Xotirada va baytkodda nima sodir bo'ladi?** — ASCII arxitektura sxemalari (Stack vs Heap, CPU registers, Bytecode).
 5. **4. Amaliy kod** — Aniq, toza Kotlin/Java/SQL kod namunalari va tahlili.
-6. **5. Boshqalarga buni qanday tushuntirasiz?** — Senior darajasidagi so'zma-so'z formula.
-7. **🔬 Chuqurroq (Deep Dive)** — Kompilyator sirlari, runtime mexanizmlari, AOT/JIT, Escape Analysis.
+6. **💥 Real Production Avariyasi (Post-Mortem)** — Bank ishlab chiqarishidagi real nosozlik va ildiz sababi.
+7. **🎯 Intervyuerning Tuzoqli Savoli** — Junior vs Senior javob solishtirmasi.
+8. **🗣️ Suhbatda Qanday Aytish Kerak** — Senior darajasidagi so'zma-so'z formula.
+9. **🔬 Chuqurroq (Under the Hood)** — Kompilyator sirlari, runtime mexanizmlari, AOT/JIT, Escape Analysis.
 
 ---
 
-## 📚 Modullar mundarijasi (83 ta to'liq dars)
+## 📚 Modullar mundarijasi (88 ta to'liq masterclass dars)
 
 | Modul | Nomi | Mavzular qamrovi |
 |---|---|---|
@@ -30,7 +32,7 @@ Har bir dars quyidagi qat'iy tizim asosida yoritilgan:
 | **COR** | Kotlin Coroutines | CoroutineScope, Job, Dispatchers, Exception handling, Channels |
 | **FL** | Kotlin Flow & Reaktivlik | StateFlow, SharedFlow, Backpressure, Operators |
 | **AN** | Android Core & Internals | Activity/Fragment Lifecycle, ViewModel, Process Death |
-| **CP** | Jetpack Compose | Recomposition, State, Side Effects, Layout Phase |
+| **CP** | Jetpack Compose | Recomposition, State, Side Effects, Layout Phase, Stability |
 | **AR** | Clean Architecture | MVI, MVVM, Clean Architecture, Repository Pattern |
 | **SEC** | Xavfsizlik va Kriptografiya | Keystore, Root detection, SSL Pinning, Token management |
 | **JV** | Chuqur Java | JVM Internals, ClassLoader, JMM, Garbage Collection |
@@ -39,8 +41,10 @@ Har bir dars quyidagi qat'iy tizim asosida yoritilgan:
 | **TX** | Tranzaksiyalar va ACID | Tranzaksiya izolyatsiyasi darajalari, Deadlock, MVCC |
 | **SP** | Stored Procedures | PL/SQL paketlar, Triggers, Protseduralar |
 | **FB** | Fintech va Bank Tizimlari | Billing, Card processing, Idempotency, 2-Phase Commit |
-| **REAL** | Real Intervyu Savollari | Bank suhbatlarida beriladigan murakkab savollar va javoblar |
+| **REAL** | Real Intervyu Savollari (6 ta dars) | Asia Alliance, TBC, Idempotency, LMK, Recomposition, Deadlock, Coroutines Exceptions |
 | **HR** | HR va Madaniy Moslik | STAR metodikasi, Muzokaralar, Karyera strategiyasi |
+
+> **🎯 Texnik Sinov (Mock Interview):** Barcha 17 ta modul bo'yicha 52 ta professional intervyu savoli va yo'naltiruvchi maslahatlar bazasi kiritilgan.
 
 ---
 

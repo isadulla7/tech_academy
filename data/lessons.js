@@ -1,6 +1,128 @@
 // Tech Academy v1 - Lessons Database
 // To'liq o'quv dasturi: 17 ta modul, 100 ta masterclass dars, 65 ta intervyu savollari.
 
+window.ACADEMY_MODULES = [
+  {
+    "id": "FND",
+    "name": "1. Apparat va Xotira Asoslari",
+    "order": 1
+  },
+  {
+    "id": "OOP",
+    "name": "2. Obyektga Yo‘naltirilgan Dasturlash (OOP)",
+    "order": 2
+  },
+  {
+    "id": "KT",
+    "name": "3. Chuqur Kotlin & JVM Bytecode",
+    "order": 3
+  },
+  {
+    "id": "COR",
+    "name": "4. Kotlin Coroutines & Asinxronlik",
+    "order": 4
+  },
+  {
+    "id": "FL",
+    "name": "5. Kotlin Flow & Reaktiv Dasturlash",
+    "order": 5
+  },
+  {
+    "id": "AN",
+    "name": "6. Android SDK & Internals",
+    "order": 6
+  },
+  {
+    "id": "CP",
+    "name": "7. Jetpack Compose & Deklarativ UI",
+    "order": 7
+  },
+  {
+    "id": "AR",
+    "name": "8. Clean Architecture & DI (Hilt)",
+    "order": 8
+  },
+  {
+    "id": "SEC",
+    "name": "9. Xavfsizlik & Kriptografiya",
+    "order": 9
+  },
+  {
+    "id": "JV",
+    "name": "10. Java Core & JVM Xotirasi",
+    "order": 10
+  },
+  {
+    "id": "JCON",
+    "name": "11. Java Concurrency & Multithreading",
+    "order": 11
+  },
+  {
+    "id": "SQL",
+    "name": "12. Relyatsion Bazalar & SQL (Oracle)",
+    "order": 12
+  },
+  {
+    "id": "TX",
+    "name": "13. Tranzaksiyalar & ACID Prinsiplari",
+    "order": 13
+  },
+  {
+    "id": "SP",
+    "name": "14. Spring Boot & Backend Arxitekturasi",
+    "order": 14
+  },
+  {
+    "id": "FB",
+    "name": "15. Fintech & To‘lov Tizimlari",
+    "order": 15
+  },
+  {
+    "id": "REAL",
+    "name": "16. Real Intervyu Savollari",
+    "order": 16
+  },
+  {
+    "id": "HR",
+    "name": "17. HR & Madaniy Moslik",
+    "order": 17
+  }
+];
+
+window.ACADEMY_RESUME = {
+  "headline": "Software Engineer | Fintech | Android + Oracle PL/SQL + Java | Banking Systems",
+  "experience": "5+ years production fintech",
+  "focus": [
+    "Kotlin",
+    "Android SDK",
+    "Coroutines",
+    "MVVM",
+    "Clean Architecture",
+    "Hilt/Dagger",
+    "Retrofit",
+    "REST APIs",
+    "JWT",
+    "Java",
+    "Oracle PL/SQL",
+    "Query Optimization",
+    "Spring Boot",
+    "Transaction Processing",
+    "Modular Architecture",
+    "API Design",
+    "GitLab CI/CD"
+  ],
+  "evidence": [
+    "Production mobile banking",
+    "100k+ mobile users",
+    "Financial transaction features",
+    "High-volume transaction data",
+    "PL/SQL financial procedures",
+    "Spring Boot internal REST APIs",
+    "Database performance optimization",
+    "Code review and code quality"
+  ]
+};
+
 window.ACADEMY_LESSONS = [
   {
     "id": "FND-001",
@@ -2119,395 +2241,460 @@ window.ACADEMY_QUESTIONS = [
     "id": "Q-001",
     "module": "FND",
     "q": "Process va Thread o‘rtasidagi xotira va apparat darajasidagi farq nima?",
-    "hint": "Mustaqil Virtual Memory Space vs Umumiy Heap va shaxsiy 1 MB Stack freymi haqida gapiring."
+    "hint": "Mustaqil Virtual Memory Space vs Umumiy Heap va shaxsiy 1 MB Stack freymi haqida gapiring.",
+    "text": "Process va Thread o‘rtasidagi xotira va apparat darajasidagi farq nima?"
   },
   {
     "id": "Q-002",
     "module": "FND",
     "q": "Stack va Heap xotirasi qanday ishlaydi va SOE vs OOM farqi nima?",
-    "hint": "LIFO freymlari, CPU Stack Pointer, -Xss chegarasi va GC managed Heap havzasi haqida gapiring."
+    "hint": "LIFO freymlari, CPU Stack Pointer, -Xss chegarasi va GC managed Heap havzasi haqida gapiring.",
+    "text": "Stack va Heap xotirasi qanday ishlaydi va SOE vs OOM farqi nima?"
   },
   {
     "id": "Q-003",
     "module": "FND",
     "q": "Escape Analysis va Scalar Replacement optimizatsiyasi nima?",
-    "hint": "NoEscape holatida obyektni Heap allokatsiyasiz to‘g‘ridan-to‘g‘ri CPU registrlariga joylash haqida gapiring."
+    "hint": "NoEscape holatida obyektni Heap allokatsiyasiz to‘g‘ridan-to‘g‘ri CPU registrlariga joylash haqida gapiring.",
+    "text": "Escape Analysis va Scalar Replacement optimizatsiyasi nima?"
   },
   {
     "id": "Q-004",
     "module": "FND",
     "q": "VTable va dinamik dispatch nima? Nega Kotlinda barcha metodlar sukut bo‘yicha final?",
-    "hint": "Virtual Method Table, Megamorphic vs Monomorphic Call Sites va JIT inlining optimizatsiyasi haqida gapiring."
+    "hint": "Virtual Method Table, Megamorphic vs Monomorphic Call Sites va JIT inlining optimizatsiyasi haqida gapiring.",
+    "text": "VTable va dinamik dispatch nima? Nega Kotlinda barcha metodlar sukut bo‘yicha final?"
   },
   {
     "id": "Q-005",
     "module": "OOP",
     "q": "Liskov Substitution tamoyili (LSP) buzilganini amaliy kodda qanday aniqlash mumkin?",
-    "hint": "UnsupportedOperationException tashlash va if (card is CreditCard) tur tekshiruvlari belgisi haqida gapiring."
+    "hint": "UnsupportedOperationException tashlash va if (card is CreditCard) tur tekshiruvlari belgisi haqida gapiring.",
+    "text": "Liskov Substitution tamoyili (LSP) buzilganini amaliy kodda qanday aniqlash mumkin?"
   },
   {
     "id": "Q-006",
     "module": "OOP",
     "q": "Composition over Inheritance: Nega merosxo‘rlikdan ko‘ra kompozitsiya afzal?",
-    "hint": "Tight coupling (qattiq bog‘liqlik) va Fragile Base Class xavflari haqida gapiring."
+    "hint": "Tight coupling (qattiq bog‘liqlik) va Fragile Base Class xavflari haqida gapiring.",
+    "text": "Composition over Inheritance: Nega merosxo‘rlikdan ko‘ra kompozitsiya afzal?"
   },
   {
     "id": "Q-007",
     "module": "OOP",
     "q": "Dependency Inversion Principle (DIP) va Dependency Injection (DI) farqi nima?",
-    "hint": "Arxitektura qoidasi (yuqori modul quyi modulga bog‘lanmasligi) vs uni amalga oshirish mexanizmi haqida gapiring."
+    "hint": "Arxitektura qoidasi (yuqori modul quyi modulga bog‘lanmasligi) vs uni amalga oshirish mexanizmi haqida gapiring.",
+    "text": "Dependency Inversion Principle (DIP) va Dependency Injection (DI) farqi nima?"
   },
   {
     "id": "Q-008",
     "module": "KT",
     "q": "Kotlin inline, noinline va crossinline kalit so‘zlari nima vazifani bajaradi?",
-    "hint": "FunctionN obyekt allokatsiyasi, call-site inlining va non-local return taqiqlanishi haqida gapiring."
+    "hint": "FunctionN obyekt allokatsiyasi, call-site inlining va non-local return taqiqlanishi haqida gapiring.",
+    "text": "Kotlin inline, noinline va crossinline kalit so‘zlari nima vazifani bajaradi?"
   },
   {
     "id": "Q-009",
     "module": "KT",
     "q": "val o‘zgaruvchisi obyektni to‘liq immutable (o‘zgarmas) qiladimi?",
-    "hint": "Reference qayta bog‘lanmasligi vs obyektning ichki holati (internal state) o‘zgarishi haqida gapiring."
+    "hint": "Reference qayta bog‘lanmasligi vs obyektning ichki holati (internal state) o‘zgarishi haqida gapiring.",
+    "text": "val o‘zgaruvchisi obyektni to‘liq immutable (o‘zgarmas) qiladimi?"
   },
   {
     "id": "Q-010",
     "module": "KT",
     "q": "data class nima va uning copy() metodi Shallow yoki Deep copy qiladimi?",
-    "hint": "Avtomatik equals/hashCode/toString generatsiyasi va ichki obyektlarning reference nusxasi olinishi haqida gapiring."
+    "hint": "Avtomatik equals/hashCode/toString generatsiyasi va ichki obyektlarning reference nusxasi olinishi haqida gapiring.",
+    "text": "data class nima va uning copy() metodi Shallow yoki Deep copy qiladimi?"
   },
   {
     "id": "Q-011",
     "module": "KT",
     "q": "reified generic parametri qanday ishlaydi va Type Erasure‘ni qanday chetlab o‘tadi?",
-    "hint": "Faqat inline funksiyada ishlashi va baytkodda T o‘rniga haqiqiy Class<T> yozib ketilishi haqida gapiring."
+    "hint": "Faqat inline funksiyada ishlashi va baytkodda T o‘rniga haqiqiy Class<T> yozib ketilishi haqida gapiring.",
+    "text": "reified generic parametri qanday ishlaydi va Type Erasure‘ni qanday chetlab o‘tadi?"
   },
   {
     "id": "Q-012",
     "module": "COR",
     "q": "launch va async o‘rtasidagi asosiy farqlar nima?",
-    "hint": "Job (Fire-and-forget) vs Deferred<T> natija va‘dasi hamda await() chaqiruvi haqida gapiring."
+    "hint": "Job (Fire-and-forget) vs Deferred<T> natija va‘dasi hamda await() chaqiruvi haqida gapiring.",
+    "text": "launch va async o‘rtasidagi asosiy farqlar nima?"
   },
   {
     "id": "Q-013",
     "module": "COR",
     "q": "SupervisorJob va oddiy Job xatolik tarqalishida (Exception propagation) qanday farq qiladi?",
-    "hint": "Bitta bolaning xatosi butun scope‘ni yiqitishi vs bolalarning mustaqil xato qilishi haqida gapiring."
+    "hint": "Bitta bolaning xatosi butun scope‘ni yiqitishi vs bolalarning mustaqil xato qilishi haqida gapiring.",
+    "text": "SupervisorJob va oddiy Job xatolik tarqalishida (Exception propagation) qanday farq qiladi?"
   },
   {
     "id": "Q-014",
     "module": "COR",
     "q": "withContext va coroutineScope farqi nima va withContext nega yangi korutina ochmaydi?",
-    "hint": "Dispatcher kontekstini to‘xtatib almashtirish vs yangi bolalar boshqaruvchi ierarxik scope haqida gapiring."
+    "hint": "Dispatcher kontekstini to‘xtatib almashtirish vs yangi bolalar boshqaruvchi ierarxik scope haqida gapiring.",
+    "text": "withContext va coroutineScope farqi nima va withContext nega yangi korutina ochmaydi?"
   },
   {
     "id": "Q-015",
     "module": "COR",
     "q": "CancellationException try-catch‘da ushlanganda nega uni qayta throw qilish shart?",
-    "hint": "Cooperative cancellation mexanizmi buzilishi va fonda to‘xtamasdan xotira oqishi (leak) haqida gapiring."
+    "hint": "Cooperative cancellation mexanizmi buzilishi va fonda to‘xtamasdan xotira oqishi (leak) haqida gapiring.",
+    "text": "CancellationException try-catch‘da ushlanganda nega uni qayta throw qilish shart?"
   },
   {
     "id": "Q-016",
     "module": "FL",
     "q": "StateFlow va SharedFlow o‘rtasidagi arxitekturaviy farqlar nima?",
-    "hint": "Initial value, replay=1, distinctUntilChanged holati vs bir martalik hodisalar oqimi haqida gapiring."
+    "hint": "Initial value, replay=1, distinctUntilChanged holati vs bir martalik hodisalar oqimi haqida gapiring.",
+    "text": "StateFlow va SharedFlow o‘rtasidagi arxitekturaviy farqlar nima?"
   },
   {
     "id": "Q-017",
     "module": "FL",
     "q": "Cold Flow va Hot Flow o‘rtasidagi farq nima?",
-    "hint": "Collector ulangandagina ishlab boshlashi vs mustaqil ishlab turgan faol oqim haqida gapiring."
+    "hint": "Collector ulangandagina ishlab boshlashi vs mustaqil ishlab turgan faol oqim haqida gapiring.",
+    "text": "Cold Flow va Hot Flow o‘rtasidagi farq nima?"
   },
   {
     "id": "Q-018",
     "module": "FL",
     "q": "Flow‘da Backpressure nima va buffer() hamda conflate() operatorlari buni qanday hal qiladi?",
-    "hint": "Producer tezroq ishlab Consumer sekin o‘qiganda navbat to‘lib qolishi haqida gapiring."
+    "hint": "Producer tezroq ishlab Consumer sekin o‘qiganda navbat to‘lib qolishi haqida gapiring.",
+    "text": "Flow‘da Backpressure nima va buffer() hamda conflate() operatorlari buni qanday hal qiladi?"
   },
   {
     "id": "Q-019",
     "module": "AN",
     "q": "Fragment ichida viewLifecycleOwner nega oddiy this o‘rniga ishlatiladi?",
-    "hint": "Fragment instansiyasi yashab turib View qayta yaratilishi va LiveData/Flow leak xavfi haqida gapiring."
+    "hint": "Fragment instansiyasi yashab turib View qayta yaratilishi va LiveData/Flow leak xavfi haqida gapiring.",
+    "text": "Fragment ichida viewLifecycleOwner nega oddiy this o‘rniga ishlatiladi?"
   },
   {
     "id": "Q-020",
     "module": "AN",
     "q": "Process Death nima va nima uchun ViewModel uni saqlab qololmaydi?",
-    "hint": "Linux LMK SIGKILL, oom_score_adj, Heap o‘chishi va SavedStateHandle OS Bundle saqlanishi haqida gapiring."
+    "hint": "Linux LMK SIGKILL, oom_score_adj, Heap o‘chishi va SavedStateHandle OS Bundle saqlanishi haqida gapiring.",
+    "text": "Process Death nima va nima uchun ViewModel uni saqlab qololmaydi?"
   },
   {
     "id": "Q-021",
     "module": "AN",
     "q": "Android ANR xatosi aynan qaysi vaqt chegaralarida ro‘y beradi?",
-    "hint": "Input Event 5 soniya, Broadcast 10 soniya, Service 20 soniya Main Thread bloklanishi haqida gapiring."
+    "hint": "Input Event 5 soniya, Broadcast 10 soniya, Service 20 soniya Main Thread bloklanishi haqida gapiring.",
+    "text": "Android ANR xatosi aynan qaysi vaqt chegaralarida ro‘y beradi?"
   },
   {
     "id": "Q-022",
     "module": "AN",
     "q": "Service, Foreground Service va WorkManager qachon va qanday tanlanadi?",
-    "hint": "Foydalanuvchi ko‘rib turgan notification talabi vs OS doimiy qayta ishga tushiruvchi WorkManager haqida gapiring."
+    "hint": "Foydalanuvchi ko‘rib turgan notification talabi vs OS doimiy qayta ishga tushiruvchi WorkManager haqida gapiring.",
+    "text": "Service, Foreground Service va WorkManager qachon va qanday tanlanadi?"
   },
   {
     "id": "Q-023",
     "module": "CP",
     "q": "Jetpack Compose‘da Skippable va Unstable turlar qanday farq qiladi?",
-    "hint": "List vs ImmutableList, @Immutable annotatsiyasi va $changed bitmask tekshiruvi haqida gapiring."
+    "hint": "List vs ImmutableList, @Immutable annotatsiyasi va $changed bitmask tekshiruvi haqida gapiring.",
+    "text": "Jetpack Compose‘da Skippable va Unstable turlar qanday farq qiladi?"
   },
   {
     "id": "Q-024",
     "module": "CP",
     "q": "remember va rememberSaveable farqi nima?",
-    "hint": "Oddiy recomposition paytida saqlash vs Configuration change va Process Death‘da Bundle‘ga yozish haqida gapiring."
+    "hint": "Oddiy recomposition paytida saqlash vs Configuration change va Process Death‘da Bundle‘ga yozish haqida gapiring.",
+    "text": "remember va rememberSaveable farqi nima?"
   },
   {
     "id": "Q-025",
     "module": "CP",
     "q": "derivedStateOf nima uchun kerak va u qanday qilib keraksiz recomposition‘ni kamaytiradi?",
-    "hint": "Tez-tez o‘zgaruvchi state‘dan faqat shartli qiymat chiqarib obunachilarni tejamkor qilish haqida gapiring."
+    "hint": "Tez-tez o‘zgaruvchi state‘dan faqat shartli qiymat chiqarib obunachilarni tejamkor qilish haqida gapiring.",
+    "text": "derivedStateOf nima uchun kerak va u qanday qilib keraksiz recomposition‘ni kamaytiradi?"
   },
   {
     "id": "Q-026",
     "module": "AR",
     "q": "Clean Architecture‘da Domain qatlami nega Android SDK‘dan 100% xoli bo‘lishi kerak?",
-    "hint": "Framework mustaqilligi, JVM darajasida tezkor Unit testlar va biznes qoidalari barqarorligi haqida gapiring."
+    "hint": "Framework mustaqilligi, JVM darajasida tezkor Unit testlar va biznes qoidalari barqarorligi haqida gapiring.",
+    "text": "Clean Architecture‘da Domain qatlami nega Android SDK‘dan 100% xoli bo‘lishi kerak?"
   },
   {
     "id": "Q-027",
     "module": "AR",
     "q": "Hilt (Compile-time DI) va Koin (Runtime Service Locator) o‘rtasidagi tub farq nima?",
-    "hint": "KSP/APT kod generatsiyasi va Build Error tekshiruvi vs ish vaqtida HashMap‘dan dinamik qidiruv haqida gapiring."
+    "hint": "KSP/APT kod generatsiyasi va Build Error tekshiruvi vs ish vaqtida HashMap‘dan dinamik qidiruv haqida gapiring.",
+    "text": "Hilt (Compile-time DI) va Koin (Runtime Service Locator) o‘rtasidagi tub farq nima?"
   },
   {
     "id": "Q-028",
     "module": "AR",
     "q": "MVI va MVVM o‘rtasidagi eng asosiy arxitekturaviy farq nima?",
-    "hint": "Unidirectional Data Flow (UDF), Immutable bitta UiState va Intent boshqaruvi haqida gapiring."
+    "hint": "Unidirectional Data Flow (UDF), Immutable bitta UiState va Intent boshqaruvi haqida gapiring.",
+    "text": "MVI va MVVM o‘rtasidagi eng asosiy arxitekturaviy farq nima?"
   },
   {
     "id": "Q-029",
     "module": "SEC",
     "q": "Android Keystore nima va u SharedPreferences‘dan xavfsizlik jihatidan qanday farq qiladi?",
-    "hint": "Hardware-backed TEE/StrongBox shifrlash kalitlari, root huquqi bo‘lsa ham kalit o‘qib bo‘lmasligi haqida gapiring."
+    "hint": "Hardware-backed TEE/StrongBox shifrlash kalitlari, root huquqi bo‘lsa ham kalit o‘qib bo‘lmasligi haqida gapiring.",
+    "text": "Android Keystore nima va u SharedPreferences‘dan xavfsizlik jihatidan qanday farq qiladi?"
   },
   {
     "id": "Q-030",
     "module": "SEC",
     "q": "SSL Certificate Pinning nima va u Man-in-the-Middle (MitM) hujumlaridan qanday asraydi?",
-    "hint": "Tizim CA sertifikatlariga ishonmasdan, bevosita server ochiq kaliti (Public Key Pin) xeshini tekshirish haqida gapiring."
+    "hint": "Tizim CA sertifikatlariga ishonmasdan, bevosita server ochiq kaliti (Public Key Pin) xeshini tekshirish haqida gapiring.",
+    "text": "SSL Certificate Pinning nima va u Man-in-the-Middle (MitM) hujumlaridan qanday asraydi?"
   },
   {
     "id": "Q-031",
     "module": "SEC",
     "q": "Bank mobil ilovalarida Root va Emulator aniqlash (Tamper detection) qanday amalga oshiriladi?",
-    "hint": "su binary, ro.debuggable, test-keys va Google Play Integrity API tekshiruvlari haqida gapiring."
+    "hint": "su binary, ro.debuggable, test-keys va Google Play Integrity API tekshiruvlari haqida gapiring.",
+    "text": "Bank mobil ilovalarida Root va Emulator aniqlash (Tamper detection) qanday amalga oshiriladi?"
   },
   {
     "id": "Q-032",
     "module": "JV",
     "q": "Garbage Collector Generational Hypothesis nima va Eden, Survivor, Old Gen qanday ishlaydi?",
-    "hint": "Yangi obyektlarning 90% tez o‘lishi, Minor GC (tezkor) vs Major/Full GC (og‘ir Stop-the-World) haqida gapiring."
+    "hint": "Yangi obyektlarning 90% tez o‘lishi, Minor GC (tezkor) vs Major/Full GC (og‘ir Stop-the-World) haqida gapiring.",
+    "text": "Garbage Collector Generational Hypothesis nima va Eden, Survivor, Old Gen qanday ishlaydi?"
   },
   {
     "id": "Q-033",
     "module": "JV",
     "q": "Java Memory Model (JMM) dagi happens-before qoidasi nima?",
-    "hint": "CPU instruksiyalarni reordering qilishi, L1/L2 kesh xotiralar va oqimlar o‘rtasidagi ko‘rinuvchanlik kafolati haqida gapiring."
+    "hint": "CPU instruksiyalarni reordering qilishi, L1/L2 kesh xotiralar va oqimlar o‘rtasidagi ko‘rinuvchanlik kafolati haqida gapiring.",
+    "text": "Java Memory Model (JMM) dagi happens-before qoidasi nima?"
   },
   {
     "id": "Q-034",
     "module": "JV",
     "q": "Java ClassLoader ierarxiyasi va Delegation (Vakolat berish) printsipi nima?",
-    "hint": "Bootstrap, Platform va Application ClassLoader, ota yuklovchiga birinchi so‘rov berish qoidasi haqida gapiring."
+    "hint": "Bootstrap, Platform va Application ClassLoader, ota yuklovchiga birinchi so‘rov berish qoidasi haqida gapiring.",
+    "text": "Java ClassLoader ierarxiyasi va Delegation (Vakolat berish) printsipi nima?"
   },
   {
     "id": "Q-035",
     "module": "JCON",
     "q": "volatile kalit so‘zi nima qiladi va u nega i++ amalini atomik qila olmaydi?",
-    "hint": "CPU keshdan emas to‘g‘ridan-to‘g‘ri RAM‘dan o‘qish kafolati, lekin 3 ta amal (read-modify-write) atomik emasligi haqida gapiring."
+    "hint": "CPU keshdan emas to‘g‘ridan-to‘g‘ri RAM‘dan o‘qish kafolati, lekin 3 ta amal (read-modify-write) atomik emasligi haqida gapiring.",
+    "text": "volatile kalit so‘zi nima qiladi va u nega i++ amalini atomik qila olmaydi?"
   },
   {
     "id": "Q-036",
     "module": "JCON",
     "q": "Compare-And-Swap (CAS) va AtomicInteger qanday ishlaydi?",
-    "hint": "Lock-free apparat buyrug‘i (cmpxchg), optimistik sikl va OS thread bloklanmasligi haqida gapiring."
+    "hint": "Lock-free apparat buyrug‘i (cmpxchg), optimistik sikl va OS thread bloklanmasligi haqida gapiring.",
+    "text": "Compare-And-Swap (CAS) va AtomicInteger qanday ishlaydi?"
   },
   {
     "id": "Q-037",
     "module": "JCON",
     "q": "synchronized bloki va ReentrantLock o‘rtasidagi asosiy farqlar nima?",
-    "hint": "Fairness (adolatli navbat), tryLock() timeout va Condition o‘zgaruvchilari haqida gapiring."
+    "hint": "Fairness (adolatli navbat), tryLock() timeout va Condition o‘zgaruvchilari haqida gapiring.",
+    "text": "synchronized bloki va ReentrantLock o‘rtasidagi asosiy farqlar nima?"
   },
   {
     "id": "Q-038",
     "module": "SQL",
     "q": "Relyatsion bazalarda B-Tree indekslar qanday ishlaydi va qachon indeks ishlamay qoladi?",
-    "hint": "Daraxt balandligi Log(N), ustunga funksiya qo‘llanganda (WHERE UPPER(name)) yoki implicit conversion xatolari haqida gapiring."
+    "hint": "Daraxt balandligi Log(N), ustunga funksiya qo‘llanganda (WHERE UPPER(name)) yoki implicit conversion xatolari haqida gapiring.",
+    "text": "Relyatsion bazalarda B-Tree indekslar qanday ishlaydi va qachon indeks ishlamay qoladi?"
   },
   {
     "id": "Q-039",
     "module": "SQL",
     "q": "INDEX UNIQUE SCAN va INDEX RANGE SCAN o‘rtasidagi farq nima?",
-    "hint": "Birlamchi kalit (PK) tenglik sharti vs diapazon yoki non-unique indeks orqali ko‘p qator qidirish haqida gapiring."
+    "hint": "Birlamchi kalit (PK) tenglik sharti vs diapazon yoki non-unique indeks orqali ko‘p qator qidirish haqida gapiring.",
+    "text": "INDEX UNIQUE SCAN va INDEX RANGE SCAN o‘rtasidagi farq nima?"
   },
   {
     "id": "Q-040",
     "module": "SQL",
     "q": "Katta bank jadvallarida Table Partitioning nima uchun kerak?",
-    "hint": "Partition Pruning, millionlab tranzaksiyalarni sana bo‘yicha alohida jismoniy segmentlarga bo‘lish haqida gapiring."
+    "hint": "Partition Pruning, millionlab tranzaksiyalarni sana bo‘yicha alohida jismoniy segmentlarga bo‘lish haqida gapiring.",
+    "text": "Katta bank jadvallarida Table Partitioning nima uchun kerak?"
   },
   {
     "id": "Q-041",
     "module": "TX",
     "q": "Tranzaksiya izolyatsiyasi darajalari (Read Committed, Repeatable Read, Serializable) qanday farqlanadi?",
-    "hint": "Dirty Read, Non-Repeatable Read va Phantom Read anomaliyalari haqida gapiring."
+    "hint": "Dirty Read, Non-Repeatable Read va Phantom Read anomaliyalari haqida gapiring.",
+    "text": "Tranzaksiya izolyatsiyasi darajalari (Read Committed, Repeatable Read, Serializable) qanday farqlanadi?"
   },
   {
     "id": "Q-042",
     "module": "TX",
     "q": "Deadlock (ORA-00060) qanday paydo bo‘ladi va uni kodda 100% oldini olishning formulasi nima?",
-    "hint": "Resurslarni har doim bitta qat‘iy tartibda (ORDER BY id ASC) qulflash qoidasi haqida gapiring."
+    "hint": "Resurslarni har doim bitta qat‘iy tartibda (ORDER BY id ASC) qulflash qoidasi haqida gapiring.",
+    "text": "Deadlock (ORA-00060) qanday paydo bo‘ladi va uni kodda 100% oldini olishning formulasi nima?"
   },
   {
     "id": "Q-043",
     "module": "TX",
     "q": "ACID prinsiplaridan Atomicity va Durability ma‘lumotlar bazasida qanday kafolatlanadi?",
-    "hint": "Undo tablespace (orqaga qaytarish) va Redo log / WAL (avariyadan so‘ng tiklash) mexanizmlari haqida gapiring."
+    "hint": "Undo tablespace (orqaga qaytarish) va Redo log / WAL (avariyadan so‘ng tiklash) mexanizmlari haqida gapiring.",
+    "text": "ACID prinsiplaridan Atomicity va Durability ma‘lumotlar bazasida qanday kafolatlanadi?"
   },
   {
     "id": "Q-044",
     "module": "SP",
     "q": "PL/SQL‘da BULK COLLECT va FORALL qanday qilib hisoblash tezligini 100 barobar oshiradi?",
-    "hint": "SQL dvigateli va PL/SQL dvigateli o‘rtasidagi Context Switching sonini minimallashtirish haqida gapiring."
+    "hint": "SQL dvigateli va PL/SQL dvigateli o‘rtasidagi Context Switching sonini minimallashtirish haqida gapiring.",
+    "text": "PL/SQL‘da BULK COLLECT va FORALL qanday qilib hisoblash tezligini 100 barobar oshiradi?"
   },
   {
     "id": "Q-045",
     "module": "SP",
     "q": "BULK COLLECT qilganda LIMIT qo‘yilmasa serverda qanday avariya yuz beradi?",
-    "hint": "PGA xotirasi to‘lib ketishi, ORA-04030 xatosi va butun DB instansiyasi qulashi haqida gapiring."
+    "hint": "PGA xotirasi to‘lib ketishi, ORA-04030 xatosi va butun DB instansiyasi qulashi haqida gapiring.",
+    "text": "BULK COLLECT qilganda LIMIT qo‘yilmasa serverda qanday avariya yuz beradi?"
   },
   {
     "id": "Q-046",
     "module": "FB",
     "q": "Fintech to‘lovlarida Idempotency-Key qanday qilib Double-Charge xavfini yo‘qotadi?",
-    "hint": "Client UUID, Redis Distributed Lock, va keshdagi avvalgi natijani qaytarish haqida gapiring."
+    "hint": "Client UUID, Redis Distributed Lock, va keshdagi avvalgi natijani qaytarish haqida gapiring.",
+    "text": "Fintech to‘lovlarida Idempotency-Key qanday qilib Double-Charge xavfini yo‘qotadi?"
   },
   {
     "id": "Q-047",
     "module": "FB",
     "q": "Ikki tomonlama buxgalteriya (Double-Entry Ledger) qoidasi nima va nega bankda oddiy balance ustuni yetarli emas?",
-    "hint": "Debit va Credit tengligi, audit xavfsizligi va barcha operatsiyalarning o‘zgarmas (immutable) jurnali haqida gapiring."
+    "hint": "Debit va Credit tengligi, audit xavfsizligi va barcha operatsiyalarning o‘zgarmas (immutable) jurnali haqida gapiring.",
+    "text": "Ikki tomonlama buxgalteriya (Double-Entry Ledger) qoidasi nima va nega bankda oddiy balance ustuni yetarli emas?"
   },
   {
     "id": "Q-048",
     "module": "FB",
     "q": "Mobil bankingda 401 Unauthorized token yangilanishida parallel so‘rovlar poygasi (Race condition) qanday yechiladi?",
-    "hint": "OkHttp Authenticator, bitta umumiy Mutex/Synchronized lock orqali faqat 1 marta refresh token yuborish haqida gapiring."
+    "hint": "OkHttp Authenticator, bitta umumiy Mutex/Synchronized lock orqali faqat 1 marta refresh token yuborish haqida gapiring.",
+    "text": "Mobil bankingda 401 Unauthorized token yangilanishida parallel so‘rovlar poygasi (Race condition) qanday yechiladi?"
   },
   {
     "id": "Q-049",
     "module": "REAL",
     "q": "Nega moliya hisoblarida Double ishlatish taqiqlanadi va banklar qanday turlardan foydalanadi?",
-    "hint": "IEEE 754 ikkilik fraktsiya yaxlitlash xatosi (0.19999999999999996), Long tiyinda yoki BigDecimal haqida gapiring."
+    "hint": "IEEE 754 ikkilik fraktsiya yaxlitlash xatosi (0.19999999999999996), Long tiyinda yoki BigDecimal haqida gapiring.",
+    "text": "Nega moliya hisoblarida Double ishlatish taqiqlanadi va banklar qanday turlardan foydalanadi?"
   },
   {
     "id": "Q-050",
     "module": "REAL",
     "q": "Kotlin Int va Int? turlarining xotiradagi farqi (Boxing overhead) nima?",
-    "hint": "Stack 4 bayt primitiv vs Heap 24 bayt java.lang.Integer obyekti (Header + padding) haqida gapiring."
+    "hint": "Stack 4 bayt primitiv vs Heap 24 bayt java.lang.Integer obyekti (Header + padding) haqida gapiring.",
+    "text": "Kotlin Int va Int? turlarining xotiradagi farqi (Boxing overhead) nima?"
   },
   {
     "id": "Q-051",
     "module": "REAL",
     "q": "SavedStateHandle va Binder buferi chegarasi nima? Nega TransactionTooLargeException chiqadi?",
-    "hint": "Binder IPC 1 MB umumiy cheklovi, katta ro‘yxatlarni Bundle‘ga tiqmasdan faqat ID saqlash haqida gapiring."
+    "hint": "Binder IPC 1 MB umumiy cheklovi, katta ro‘yxatlarni Bundle‘ga tiqmasdan faqat ID saqlash haqida gapiring.",
+    "text": "SavedStateHandle va Binder buferi chegarasi nima? Nega TransactionTooLargeException chiqadi?"
   },
   {
     "id": "Q-052",
     "module": "REAL",
     "q": "Jetpack Compose‘da nima uchun lambda parametrlar va List ro‘yxatlar keraksiz recomposition keltirib chiqaradi?",
-    "hint": "Unstable tiplar, remember qilinmagan lambdalar yangi instansiya berishi va ImmutableList yechimi haqida gapiring."
+    "hint": "Unstable tiplar, remember qilinmagan lambdalar yangi instansiya berishi va ImmutableList yechimi haqida gapiring.",
+    "text": "Jetpack Compose‘da nima uchun lambda parametrlar va List ro‘yxatlar keraksiz recomposition keltirib chiqaradi?"
   },
   {
     "id": "Q-053",
     "module": "SP",
     "q": "HikariCP maxPoolSize nima uchun 100 emas, (Cores * 2 + Disks) formulasi bo‘yicha kamroq sozlanishi kerak?",
-    "hint": "Baza serverida CPU Context Switching yuklamasi va oqimlar o‘rtasida raqobatni yo‘qotish haqida gapiring."
+    "hint": "Baza serverida CPU Context Switching yuklamasi va oqimlar o‘rtasida raqobatni yo‘qotish haqida gapiring.",
+    "text": "HikariCP maxPoolSize nima uchun 100 emas, (Cores * 2 + Disks) formulasi bo‘yicha kamroq sozlanishi kerak?"
   },
   {
     "id": "Q-054",
     "module": "SP",
     "q": "@Transactional(readOnly = true) qanday qilib Hibernate va DB xotirasini tejaydi?",
-    "hint": "Hibernate Snapshot dirty checking o‘chirilishi va sessiya xotirasi 50% tejalishi haqida gapiring."
+    "hint": "Hibernate Snapshot dirty checking o‘chirilishi va sessiya xotirasi 50% tejalishi haqida gapiring.",
+    "text": "@Transactional(readOnly = true) qanday qilib Hibernate va DB xotirasini tejaydi?"
   },
   {
     "id": "Q-055",
     "module": "SQL",
     "q": "Oracle SGA va PGA nima va COMMIT qilinganda nima uchun diskka butun jadval yozilmaydi?",
-    "hint": "Buffer Cache vs Redo Log Buffer, LGWR asinxron yozishi va WAL tamoyili haqida gapiring."
+    "hint": "Buffer Cache vs Redo Log Buffer, LGWR asinxron yozishi va WAL tamoyili haqida gapiring.",
+    "text": "Oracle SGA va PGA nima va COMMIT qilinganda nima uchun diskka butun jadval yozilmaydi?"
   },
   {
     "id": "Q-056",
     "module": "SQL",
     "q": "Composite indekslarda Leading Column qoidasi nima va nima uchun telefon kitobiga o‘xshaydi?",
-    "hint": "B-Tree daraxti faqat 1-ustun bo‘yicha saralanishi va uning yo‘qligi Full Scan keltirishi haqida gapiring."
+    "hint": "B-Tree daraxti faqat 1-ustun bo‘yicha saralanishi va uning yo‘qligi Full Scan keltirishi haqida gapiring.",
+    "text": "Composite indekslarda Leading Column qoidasi nima va nima uchun telefon kitobiga o‘xshaydi?"
   },
   {
     "id": "Q-057",
     "module": "TX",
     "q": "Foreign Key ustuni indekslanmagan bo‘lsa, nima uchun ota jadvaldan DELETE qilinganda butun bolalar jadvali qulflanadi (TM Lock)?",
-    "hint": "Referential integrity tekshirishda qator o‘rniga butun Table-Level Share Lock qo‘yilishi haqida gapiring."
+    "hint": "Referential integrity tekshirishda qator o‘rniga butun Table-Level Share Lock qo‘yilishi haqida gapiring.",
+    "text": "Foreign Key ustuni indekslanmagan bo‘lsa, nima uchun ota jadvaldan DELETE qilinganda butun bolalar jadvali qulflanadi (TM Lock)?"
   },
   {
     "id": "Q-058",
     "module": "TX",
     "q": "ORA-01555 Snapshot Too Old xatosi qayerdan keladi va Undo Tablespace qanday vazifa bajaradi?",
-    "hint": "Statement-Level Read Consistency, SCN vaqti va uzoq hisobotda eski Undo bloklari ustiga qayta yozilishi haqida gapiring."
+    "hint": "Statement-Level Read Consistency, SCN vaqti va uzoq hisobotda eski Undo bloklari ustiga qayta yozilishi haqida gapiring.",
+    "text": "ORA-01555 Snapshot Too Old xatosi qayerdan keladi va Undo Tablespace qanday vazifa bajaradi?"
   },
   {
     "id": "Q-059",
     "module": "TX",
     "q": "PL/SQL Pipelined Table Functions (PIPE ROW) qanday qilib millionlab qatorlarni xotirasiz oqizadi?",
-    "hint": "Barcha natijani massivga yig‘masdan birinchi qatordan boshlab streaming uzatish haqida gapiring."
+    "hint": "Barcha natijani massivga yig‘masdan birinchi qatordan boshlab streaming uzatish haqida gapiring.",
+    "text": "PL/SQL Pipelined Table Functions (PIPE ROW) qanday qilib millionlab qatorlarni xotirasiz oqizadi?"
   },
   {
     "id": "Q-060",
     "module": "TX",
     "q": "PRAGMA AUTONOMOUS_TRANSACTION nima va uning ichida qanday Deadlock tuzog‘i bor?",
-    "hint": "Asosiy tranzaksiyadan mustaqil commit bo‘lishi, lekin asosiy tranzaksiya ushlagan qatorga teginmaslik sharti haqida gapiring."
+    "hint": "Asosiy tranzaksiyadan mustaqil commit bo‘lishi, lekin asosiy tranzaksiya ushlagan qatorga teginmaslik sharti haqida gapiring.",
+    "text": "PRAGMA AUTONOMOUS_TRANSACTION nima va uning ichida qanday Deadlock tuzog‘i bor?"
   },
   {
     "id": "Q-061",
     "module": "JCON",
     "text": "Java 21 Virtual Threads bilan ishlaganda 'Thread Pinning' muammosi nima va u nega yuz beradi?",
     "hint": "Virtual thread synchronized blok yoki JNI chaqiruvida blocking I/O qilganda Carrier Thread'dan unmount bo'lolmaydi. ReentrantLock yechim bo'ladi.",
-    "category": "Java 21 & Concurrency"
+    "category": "Java 21 & Concurrency",
+    "q": "Java 21 Virtual Threads bilan ishlaganda 'Thread Pinning' muammosi nima va u nega yuz beradi?"
   },
   {
     "id": "Q-062",
     "module": "KT",
     "text": "Kotlin 2.0 dagi K2 kompilyatorining eski K1 dan asosiy arxitektura farqi nimada va Compose Compiler qayerga ko'chirildi?",
     "hint": "K2 yangi FIR (Frontend Intermediate Representation) arxitekturasini joriy qildi, bu build'ni 2x tezlashtirdi. Compose Compiler esa Kotlin repozitoriyasining rasmiy plaginiga aylandi.",
-    "category": "Kotlin 2.0 & Internals"
+    "category": "Kotlin 2.0 & Internals",
+    "q": "Kotlin 2.0 dagi K2 kompilyatorining eski K1 dan asosiy arxitektura farqi nimada va Compose Compiler qayerga ko'chirildi?"
   },
   {
     "id": "Q-063",
     "module": "SQL",
     "text": "Oracle 23ai da ko'p yillik 19c versiyasiga nisbatan kiritilgan 3 ta eng katta SQL o'zgarishini ayting.",
     "hint": "Haqiqiy mahalliy BOOLEAN tipi (VARCHAR2/NUMBER o'rniga), DUAL jadvalisiz SELECT (SELECT SYSDATE;), va multi-row INSERT (VALUES (...), (...)).",
-    "category": "Oracle Database 23ai"
+    "category": "Oracle Database 23ai",
+    "q": "Oracle 23ai da ko'p yillik 19c versiyasiga nisbatan kiritilgan 3 ta eng katta SQL o'zgarishini ayting."
   },
   {
     "id": "Q-064",
     "module": "AN",
     "text": "Android 15+ va 16 da joriy qilingan 16KB Page Size talabi nega eski bank biometriya va xavfsizlik C++ (.so) kutubxonalarini crash qiladi?",
     "hint": "Tarixiy 4KB ELF alignment 16KB virtual xotira chegarasiga to'g'ri kelmaydi. NDK linker64 kutubxonani yuklay olmaydi va SIGSEGV beradi. -Wl,-z,max-page-size=16384 bilan qayta yig'ish shart.",
-    "category": "Android 15+ Architecture"
+    "category": "Android 15+ Architecture",
+    "q": "Android 15+ va 16 da joriy qilingan 16KB Page Size talabi nega eski bank biometriya va xavfsizlik C++ (.so) kutubxonalarini crash qiladi?"
   },
   {
     "id": "Q-065",
     "module": "SP",
     "text": "Spring Boot 3 da GraalVM Native Image ilovaning ishga tushishini qanday qilib 0.05 soniyaga tushiradi va uning qanday cheklovi bor?",
     "hint": "AOT (Ahead-of-Time) orqali reflection va proxy'lar oldindan hisoblanadi. Cheklovi: dinamik reflection uchun @RegisterReflectionForBinding berilishi shart, aks holda Dead Code Elimination uni o'chirib yuboradi.",
-    "category": "Spring Boot 3 & Cloud"
+    "category": "Spring Boot 3 & Cloud",
+    "q": "Spring Boot 3 da GraalVM Native Image ilovaning ishga tushishini qanday qilib 0.05 soniyaga tushiradi va uning qanday cheklovi bor?"
   }
 ];

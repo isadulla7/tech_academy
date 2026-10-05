@@ -1,6 +1,16 @@
 (()=>{
 const L = window.ACADEMY_LESSONS || [];
-const M = window.ACADEMY_MODULES || [];
+const M = (window.ACADEMY_MODULES && window.ACADEMY_MODULES.length)
+  ? window.ACADEMY_MODULES
+  : (() => {
+      const map = new Map();
+      (window.ACADEMY_LESSONS || []).forEach(l => {
+        if (!map.has(l.module)) {
+          map.set(l.module, { id: l.module, name: l.moduleName || l.module, order: l.moduleOrder || 0 });
+        }
+      });
+      return Array.from(map.values()).sort((a,b) => (a.order || 0) - (b.order || 0));
+    })();
 const R = window.ACADEMY_RESUME || {};
 const Q = window.ACADEMY_QUESTIONS || [];
 
@@ -717,7 +727,7 @@ function mock() {
   view.innerHTML = `
     <div class="card mock-card">
       <div class="lesson-id">${q.id} · ${q.module}</div>
-      <div class="mock-q" style="font-size:22px;margin:16px 0;line-height:1.4">${esc(q.q)}</div>
+      <div class="mock-q" style="font-size:22px;margin:16px 0;line-height:1.4">${esc(q.q || q.text)}</div>
       <div class="timer" id="timer" style="font-size:24px;font-weight:700;color:var(--accent);margin-bottom:12px">01:00</div>
       <p class="muted">Ovoz chiqarib xuddi jamoangizga yoki arxitektura komissiyasiga tushuntirayotgandek javob bering.</p>
       <div class="lesson-actions">

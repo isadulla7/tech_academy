@@ -6,8 +6,8 @@
 *0 dan Senior darajagacha: Fundamental Nazariya, Xotira Arxitekturasi, Bank Production Amaliyoti va Texnik Intervyu Tayyorgarligi*
 
 [![Live Website](https://img.shields.io/badge/🌐_Live_Website-Online-38bdf8?style=for-the-badge&logo=googlechrome&logoColor=white)](https://isadulla7.github.io/tech_academy/)
-[![Lessons](https://img.shields.io/badge/📚_Darslar-95_ta_masterclass-34d399?style=for-the-badge)](https://isadulla7.github.io/tech_academy/)
-[![Questions](https://img.shields.io/badge/🎯_Texnik_Sinov-60_ta_savol-fbbf24?style=for-the-badge)](https://isadulla7.github.io/tech_academy/)
+[![Lessons](https://img.shields.io/badge/📚_Darslar-100_ta_masterclass-34d399?style=for-the-badge)](https://isadulla7.github.io/tech_academy/)
+[![Questions](https://img.shields.io/badge/🎯_Texnik_Sinov-65_ta_savol-fbbf24?style=for-the-badge)](https://isadulla7.github.io/tech_academy/)
 [![Modules](https://img.shields.io/badge/📁_Modullar-17_ta_blok-818cf8?style=for-the-badge)](https://isadulla7.github.io/tech_academy/)
 [![License](https://img.shields.io/badge/📄_Litsenziya-MIT-f43f5e?style=for-the-badge)](https://isadulla7.github.io/tech_academy/)
 
@@ -42,7 +42,7 @@ Har bir dars shunchaki quruq ta’rif yoki chet-el darsliklarining tarjimasi ema
 
 ---
 
-## 📚 O‘quv Dasturi va Modullar Mundarijasi (95 ta Masterclass Dars)
+## 📚 O‘quv Dasturi va Modullar Mundarijasi (100 ta Masterclass Dars)
 
 Platforma 17 ta ketma-ket, mantiqiy bog‘langan modullardan iborat:
 
@@ -50,18 +50,18 @@ Platforma 17 ta ketma-ket, mantiqiy bog‘langan modullardan iborat:
 |:---:|:---:|---|:---:|---|
 | **1** | `FND` | **Apparat va Xotira Asoslari** | 7 ta dars | ART vs Dalvik, DEX baytkod, Reference, Stack vs Heap, VTable, Call Stack, Thread Stack (-Xss = 1MB), Memory Leaks |
 | **2** | `OOP` | **Obyektga Yo‘naltirilgan Dasturlash (OOP)** | 5 ta dars | Abstraksiya, Inkapsulyatsiya, Polimorfizm, SOLID tamoyillari (SRP, OCP, LSP, ISP, DIP), Composition vs Inheritance |
-| **3** | `KT` | **Chuqur Kotlin & JVM Bytecode** | 8 ta dars | Null-Safety, Intrinsics, Data classes & copy(), inline/noinline/crossinline, Delegated Properties, Generics & reified |
+| **3** | `KT` | **Chuqur Kotlin & JVM Bytecode** | 9 ta dars | Null-Safety, Intrinsics, Data classes, inline, reified, Kotlin 2.0 K2 Kompilyatori (FIR) va Compose integratsiyasi |
 | **4** | `COR` | **Kotlin Coroutines & Asinxronlik** | 9 ta dars | CoroutineScope, Job vs SupervisorJob, Dispatchers, Exception propagation, Cancellation, Channels, Mutex |
 | **5** | `FL` | **Kotlin Flow & Reaktiv Dasturlash** | 8 ta dars | Cold vs Hot Flow, StateFlow, SharedFlow, Backpressure, buffer(), conflate(), flatMapLatest, Lifecycle-aware collection |
-| **6** | `AN` | **Android SDK & Internals** | 11 ta dars | Activity/Fragment Lifecycles, ViewModel, Process Death (LMK), ANR sabablari, Services, WorkManager, BroadcastReceivers |
+| **6** | `AN` | **Android SDK & Internals** | 12 ta dars | Activity Lifecycles, ViewModel, Process Death (LMK), ANR, Android 15/16 16KB Page Size NDK & C++ arxitekturasi |
 | **7** | `CP` | **Jetpack Compose & Deklarativ UI** | 8 ta dars | Recomposition, Skippable vs Unstable tiplar, Snapshot State, remember vs rememberSaveable, derivedStateOf, Side Effects |
 | **8** | `AR` | **Clean Architecture & DI (Hilt)** | 3 ta dars | MVI, MVVM, Clean Architecture qatlamlari, Hilt (Compile-time) vs Koin (Runtime Service Locator) |
 | **9** | `SEC` | **Xavfsizlik & Kriptografiya** | 3 ta dars | Android Keystore (TEE/StrongBox), SSL Certificate Pinning, Root & Emulator aniqlash (Tamper detection) |
 | **10** | `JV` | **Java Core & JVM Xotirasi** | 4 ta dars | ClassLoader ierarxiyasi, Java Memory Model (JMM), Generational GC (Minor vs Full GC), Garbage Collectors (G1, ZGC) |
-| **11** | `JCON`| **Java Concurrency & Multithreading** | 2 ta dars | volatile va Memory Barriers, CAS (Compare-And-Swap), Atomic turlar, synchronized vs ReentrantLock, Deadlocks |
-| **12** | `SQL` | **Relyatsion Bazalar & SQL (Oracle)** | 5 ta dars | B-Tree indekslar anatomiyasi, Query Execution Plan (EXPLAIN PLAN), Joins turlari, SGA vs PGA xotirasi, Composite & Function-based Indekslar |
+| **11** | `JCON`| **Java Concurrency & Multithreading** | 3 ta dars | volatile, CAS, ThreadPoolExecutor, Java 21+ Virtual Threads (Project Loom), Carrier Threads va Pinning tuzog‘i |
+| **12** | `SQL` | **Relyatsion Bazalar & SQL (Oracle)** | 6 ta dars | B-Tree indekslar, EXPLAIN PLAN, SGA vs PGA, Composite Index, Oracle 23ai vs 19c (BOOLEAN, DUAL'siz SQL, Vector Search) |
 | **13** | `TX`  | **Tranzaksiyalar & ACID Prinsiplari** | 6 ta dars | ACID, Izolyatsiya darajalari, Deadlock (ORA-00060), MVCC, Foreign Key TM Table Locks, Undo & ORA-01555 Snapshot Too Old, Advanced PL/SQL |
-| **14** | `SP`  | **Spring Boot & Backend Arxitekturasi** | 6 ta dars | PL/SQL paketlar, BULK COLLECT va FORALL, HikariCP Connection Pool chuqur tahlili, @Transactional va Proxy arxitekturasi |
+| **14** | `SP`  | **Spring Boot & Backend Arxitekturasi** | 7 ta dars | PL/SQL paketlar, HikariCP Pool, @Transactional Proxy, Spring Boot 3 AOT & GraalVM Native Image, Micrometer Tracing |
 | **15** | `FB`  | **Fintech & To‘lov Tizimlari** | 3 ta dars | Double-Entry Ledger (Debit = Credit), Idempotency, 401 Token Refresh Race Condition, Taqsimlangan tranzaksiyalar |
 | **16** | `REAL`| **Real Intervyu Savollari (Masterclass)**| 6 ta dars | Asia Alliance Bank 5 ta savol, Idempotency & Double-Charge, Process Death & LMK, Compose Lag, Oracle Deadlock, Coroutines Traps |
 | **17** | `HR`  | **HR & Madaniy Moslik** | 1 ta dars | STAR metodikasi, Karyera muzokaralari, Soft skills va xalqaro intervyu psixologiyasi |
@@ -81,7 +81,7 @@ Platforma 17 ta ketma-ket, mantiqiy bog‘langan modullardan iborat:
 ## 🎯 Interaktiv Imkoniyatlar
 
 - **🎯 Texnik Sinov (Mock Interview Simulator):**
-  Yuqori paneldagi "🎯 Sinov" tugmasini bosing. Tizim sizga 60 soniyali taymer bilan 60 ta saralangan intervyu savollaridan birini taqdim etadi. Ovoz chiqarib javob berib, o‘zingizni haqiqiy suhbatdagidek sinaysiz.
+  Yuqori paneldagi "🎯 Sinov" tugmasini bosing. Tizim sizga 60 soniyali taymer bilan 65 ta saralangan intervyu savollaridan birini taqdim etadi. Ovoz chiqarib javob berib, o‘zingizni haqiqiy suhbatdagidek sinaysiz.
 - **📑 Ierarxik Mundarija (Table of Contents):**
   Chap tomonda barcha modullar ochiluvchi/yopiluvchi daraxt (Accordion) shaklida joylashgan. Har bir dars o‘z status belgisi bilan ko‘rinadi (`✓` Tushundim, `★` Tushuntira olaman, `?` Zaif, `○` O‘qilmagan).
 - **🔬 Under the Hood (Ochiq bo‘lim va Tezkor sakrash):**

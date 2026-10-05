@@ -26,6 +26,18 @@ const save = () => localStorage.setItem(KEY, JSON.stringify(state));
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const byId = id => L.find(x => x.id === id);
 
+const renderBody = (x) => {
+  if (!x || !x.body) return '';
+  if (x.body.includes('<h3 data-block-id=') || x.body.includes('class="card"')) {
+    return x.body;
+  }
+  return x.body
+    .replace(/^### (.*$)/gim, (_, h) => `<h3 data-block-id="${x.id}-B01">${h}</h3>`)
+    .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>')
+    .replace(/`([^`]+)`/g, '<code>$1</code>')
+    .replace(/\n\n/g, '<p></p>');
+};
+
 // Strict status score: unread: 0, weak: 0.2, understood: 0.7, ready: 1.0 (Highest)
 // Opening a lesson does NOT count as read!
 const score = id => ({ unread: 0, weak: 0.2, understood: 0.7, ready: 1.0 }[state.progress[id]?.status || 'unread']);
@@ -348,7 +360,7 @@ function lessonView(id) {
       </div>
 
       <div class="lesson-body">
-        ${x.body}
+        ${renderBody(x)}
       </div>
 
       <div class="card lesson-footer-nav" style="display:flex;justify-content:space-between;align-items:center;margin-top:28px;padding:18px;background:var(--panel2);flex-wrap:wrap;gap:12px">
